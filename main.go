@@ -1,9 +1,9 @@
 package main 
 
 import (
-	"fmt"
-	"log"
-	"net/http"
+        "fmt"
+        "log"
+        "net/http"
 	"strconv"
 
 	"github.com/gorilla/mux"
@@ -11,15 +11,15 @@ import (
 
 func main() {
 
-	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/", Index)
-	router.HandleFunc("/{num}", Multiplicar)
+    router := mux.NewRouter().StrictSlash(true)
+    router.HandleFunc("/", Index)
+    router.HandleFunc("/{num}", Multiplicar)
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+    log.Fatal(http.ListenAndServe(":8080", router))
 }
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Por favor, ingrese un número.")
+    fmt.Fprintln(w, "Por favor, ingrese un número.")
 }
 
 func Multiplicar(w http.ResponseWriter, r *http.Request) {
